@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jupiter VPN — Download for Android</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #0d1424; color: #e8ecf4;
+    min-height: 100vh;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 28px 18px 60px; }
+  .planet {
+    width: 84px; height: 84px; border-radius: 50%;
+    margin: 0 auto 14px;
+    background:
+      radial-gradient(circle at 30% 30%, rgba(255,255,255,.25), transparent 55%),
+      repeating-linear-gradient(0deg, #d8a25e 0 9px, #c08b48 9px 14px, #e0b070 14px 22px);
+    position: relative;
+    box-shadow: 0 0 40px rgba(216,162,94,.35);
+  }
+  .planet::after {
+    content: ""; position: absolute; left: -16px; right: -16px; top: 50%;
+    height: 12px; border-radius: 50%;
+    border: 3px solid rgba(224,176,112,.55); transform: translateY(-50%) rotate(-12deg);
+  }
+  h1 { text-align: center; font-size: 26px; margin: 6px 0 2px; }
+  .sub { text-align: center; color: #9aa7bd; margin: 0 0 22px; font-size: 14px; }
+  .btn {
+    display: block; text-align: center; text-decoration: none;
+    background: linear-gradient(180deg, #4f7cff, #3457d0);
+    color: #fff; font-weight: 700; font-size: 17px;
+    padding: 16px 22px; border-radius: 14px; margin: 0 0 10px;
+    box-shadow: 0 6px 24px rgba(63,102,224,.4);
+  }
+  .btn:active { transform: translateY(1px); }
+  .meta { text-align: center; color: #8fa0ba; font-size: 12.5px; margin-bottom: 26px; }
+  .lang {
+    display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 26px;
+  }
+  .lang button {
+    background: #1a2438; color: #cfd9ea; border: 1px solid #2a3a58;
+    padding: 7px 13px; border-radius: 20px; font-size: 13px; cursor: pointer;
+  }
+  .lang button.on { background: #3457d0; color: #fff; border-color: #3457d0; }
+  .card {
+    background: #131c30; border: 1px solid #233150; border-radius: 14px;
+    padding: 18px 18px 14px; margin-bottom: 14px;
+  }
+  .card h2 { font-size: 17px; margin: 0 0 10px; color: #fff; }
+  ol { margin: 0; padding-left: 20px; }
+  li { margin: 7px 0; line-height: 1.45; font-size: 14.5px; }
+  .warn {
+    background: #2a1f10; border: 1px solid #5c4420; border-radius: 14px;
+    padding: 14px 16px; font-size: 13.5px; line-height: 1.5; color: #e8d5ad;
+  }
+  .hidden { display: none; }
+  footer { text-align: center; color: #63718a; font-size: 12px; margin-top: 30px; }
+  details { margin-top: 10px; }
+  summary { cursor: pointer; color: #9db4ff; font-size: 13.5px; }
+  details div { font-size: 13.5px; color: #b9c4d8; line-height: 1.5; margin-top: 8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="planet"></div>
+  <h1>Jupiter VPN</h1>
+  <p class="sub" data-i18n="tagline">Free VPN client — WireGuard &amp; VLESS/VMess/Trojan. Servers in 25+ countries.</p>
+
+  <a class="btn" href="https://github.com/pmvmoscow777-cpu/jupiter-vpn/releases/latest/download/jupiter-vpn-latest.apk" download data-i18n="download">⬇ Download APK</a>
+  <p class="meta">v1.4.3 · 52 MB · Android 12 – 16 (arm64)</p>
+
+  <div class="lang" id="langs"></div>
+
+  <div class="card">
+    <h2 data-i18n="installTitle">Install on Android 12–16</h2>
+    <ol data-i18n="steps"></ol>
+  </div>
+
+  <div class="warn" data-i18n="warn"></div>
+
+  <details>
+    <summary data-i18n="troubleTitle">If installation is blocked</summary>
+    <div data-i18n="trouble"></div>
+  </details>
+
+  <footer>github.com/pmvmoscow777-cpu/jupiter-vpn</footer>
+</div>
+
+<script>
+const I18N = {
+en: {
+  tagline: "Free VPN client — WireGuard & VLESS/VMess/Trojan. Servers in 25+ countries.",
+  download: "⬇ Download APK",
+  installTitle: "Install on Android 12–16",
+  steps: [
+    "Tap <b>Download APK</b> above and wait for the file to finish downloading.",
+    "Open the downloaded file from the notification or your <b>Files</b> / <b>Downloads</b> app.",
+    "Android will ask: “For your security, your phone is not allowed to install unknown apps from this source”. Tap <b>Settings</b>.",
+    "Enable <b>Allow from this source</b> (allows your browser or Files app to install apps).",
+    "Go back and tap <b>Install</b>.",
+    "Open Jupiter VPN — it works immediately: pick a country and tap connect. On first connect Android will ask to allow a VPN connection — tap <b>OK</b>.",
+    "On Android 13+ the app may ask for notification permission — tap <b>Allow</b> to see the connection status."
+  ],
+  warn: "⚠ If Google Play Protect shows a warning about an unknown app, tap <b>More details</b> → <b>Install anyway</b>. This is normal for APKs installed outside the Play Store.",
+  troubleTitle: "If installation is blocked",
+  trouble: "1. Make sure the download finished completely (52 MB). 2. If “App not installed” appears — uninstall any older “WG Client” / “Jupiter VPN” build first. 3. Check free storage (need ~200 MB). 4. Some browsers block APK downloads: use Chrome. 5. If a corporate profile blocks installation, install via Files app after enabling “Allow from this source” for Files."
+},
+ru: {
+  tagline: "Бесплатный VPN-клиент — WireGuard и VLESS/VMess/Trojan. Серверы в 25+ странах.",
+  download: "⬇ Скачать APK",
+  installTitle: "Установка на Android 12–16",
+  steps: [
+    "Нажмите <b>Скачать APK</b> выше и дождитесь окончания загрузки.",
+    "Откройте скачанный файл из шторки уведомлений или приложения <b>Файлы</b> / <b>Загрузки</b>.",
+    "Android предупредит: «В целях безопасности установка приложений из этого источника запрещена». Нажмите <b>Настройки</b>.",
+    "Включите <b>Разрешить из этого источника</b> (для браузера или приложения «Файлы»).",
+    "Вернитесь назад и нажмите <b>Установить</b>.",
+    "Откройте Jupiter VPN — всё работает сразу: выберите страну и нажмите подключить. При первом подключении Android спросит разрешение на VPN — нажмите <b>ОК</b>.",
+    "На Android 13+ приложение попросит разрешение на уведомления — нажмите <b>Разрешить</b>, чтобы видеть статус подключения."
+  ],
+  warn: "⚠ Если Google Play Protect предупреждает о неизвестном приложении — нажмите <b>Подробнее</b> → <b>Всё равно установить</b>. Это нормально для APK вне Play Маркета.",
+  troubleTitle: "Если установка не удаётся",
+  trouble: "1. Убедитесь, что загрузка завершилась полностью (52 МБ). 2. Если появляется «Приложение не установлено» — сначала удалите старую сборку «WG Client» / «Jupiter VPN». 3. Проверьте свободное место (нужно ~200 МБ). 4. Некоторые браузеры блокируют загрузку APK — используйте Chrome. 5. Если профиль блокирует установку — установите через приложение «Файлы», включив «Разрешить из этого источника»."
+},
+es: {
+  tagline: "Cliente VPN gratuito — WireGuard y VLESS/VMess/Trojan. Servidores en más de 25 países.",
+  download: "⬇ Descargar APK",
+  installTitle: "Instalación en Android 12–16",
+  steps: [
+    "Pulsa <b>Descargar APK</b> arriba y espera a que termine la descarga.",
+    "Abre el archivo descargado desde la notificación o la app <b>Archivos</b> / <b>Descargas</b>.",
+    "Android preguntará: “Por tu seguridad, no se permite instalar apps desconocidas de esta fuente”. Pulsa <b>Configuración</b>.",
+    "Activa <b>Permitir de esta fuente</b> (para tu navegador o la app de Archivos).",
+    "Vuelve atrás y pulsa <b>Instalar</b>.",
+    "Abre Jupiter VPN — funciona de inmediato: elige un país y pulsa conectar. En la primera conexión Android pedirá permiso para VPN — pulsa <b>Aceptar</b>.",
+    "En Android 13+ la app pedirá permiso de notificaciones — pulsa <b>Permitir</b> para ver el estado de la conexión."
+  ],
+  warn: "⚠ Si Google Play Protect muestra una advertencia sobre una app desconocida, pulsa <b>Más detalles</b> → <b>Instalar igualmente</b>. Es normal para APK fuera de Play Store.",
+  troubleTitle: "Si la instalación se bloquea",
+  trouble: "1. Asegúrate de que la descarga se completó (52 MB). 2. Si aparece “App no instalada”, desinstala antes cualquier versión anterior de “WG Client” / “Jupiter VPN”. 3. Comprueba el espacio libre (necesitas ~200 MB). 4. Algunos navegadores bloquean la descarga de APK: usa Chrome. 5. Si un perfil corporativo lo bloquea, instala desde la app Archivos tras activar “Permitir de esta fuente”."
+},
+pt: {
+  tagline: "Cliente VPN gratuito — WireGuard e VLESS/VMess/Trojan. Servidores em mais de 25 países.",
+  download: "⬇ Baixar APK",
+  installTitle: "Instalação no Android 12–16",
+  steps: [
+    "Toque em <b>Baixar APK</b> acima e aguarde o download terminar.",
+    "Abra o arquivo baixado pela notificação ou no app <b>Arquivos</b> / <b>Downloads</b>.",
+    "O Android perguntará: “Por sua segurança, não é permitido instalar apps desconhecidos desta fonte”. Toque em <b>Configurações</b>.",
+    "Ative <b>Permitir desta fonte</b> (para o navegador ou app de Arquivos).",
+    "Volte e toque em <b>Instalar</b>.",
+    "Abra o Jupiter VPN — funciona imediatamente: escolha um país e toque em conectar. Na primeira conexão o Android pedirá permissão de VPN — toque em <b>Aceitar</b>.",
+    "No Android 13+ o app pedirá permissão de notificações — toque em <b>Permitir</b> para ver o status da conexão."
+  ],
+  warn: "⚠ Se o Google Play Protect avisar sobre um app desconhecido, toque em <b>Mais detalhes</b> → <b>Instalar mesmo assim</b>. É normal para APKs fora da Play Store.",
+  troubleTitle: "Se a instalação for bloqueada",
+  trouble: "1. Verifique se o download terminou por completo (52 MB). 2. Se aparecer “App não instalado”, desinstale antes qualquer build antiga do “WG Client” / “Jupiter VPN”. 3. Verifique o espaço livre (precisa de ~200 MB). 4. Alguns navegadores bloqueiam downloads de APK: use o Chrome. 5. Se um perfil corporativo bloquear, instale pelo app Arquivos ativando “Permitir desta fonte”."
+},
+fr: {
+  tagline: "Client VPN gratuit — WireGuard et VLESS/VMess/Trojan. Serveurs dans plus de 25 pays.",
+  download: "⬇ Télécharger l'APK",
+  installTitle: "Installation sur Android 12–16",
+  steps: [
+    "Appuyez sur <b>Télécharger l'APK</b> ci-dessus et attendez la fin du téléchargement.",
+    "Ouvrez le fichier téléchargé depuis la notification ou l'application <b>Fichiers</b> / <b>Téléchargements</b>.",
+    "Android demandera : « Pour votre sécurité, l'installation d'applications inconnues de cette source n'est pas autorisée ». Appuyez sur <b>Paramètres</b>.",
+    "Activez <b>Autoriser depuis cette source</b> (pour votre navigateur ou l'app Fichiers).",
+    "Revenez en arrière et appuyez sur <b>Installer</b>.",
+    "Ouvrez Jupiter VPN — tout fonctionne immédiatement : choisissez un pays et appuyez sur connecter. À la première connexion, Android demandera l'autorisation VPN — appuyez sur <b>OK</b>.",
+    "Sur Android 13+ l'application demandera l'autorisation de notifications — appuyez sur <b>Autoriser</b> pour voir le statut de connexion."
+  ],
+  warn: "⚠ Si Google Play Protect affiche un avertissement concernant une application inconnue, appuyez sur <b>Plus de détails</b> → <b>Installer quand même</b>. C'est normal pour les APK hors Play Store.",
+  troubleTitle: "Si l'installation est bloquée",
+  trouble: "1. Vérifiez que le téléchargement est terminé (52 Mo). 2. Si « Application non installée » apparaît, désinstallez d'abord toute ancienne version de « WG Client » / « Jupiter VPN ». 3. Vérifiez l'espace libre (~200 Mo nécessaires). 4. Certains navigateurs bloquent le téléchargement d'APK : utilisez Chrome. 5. Si un profil d'entreprise bloque, installez via l'app Fichiers après avoir activé « Autoriser depuis cette source »."
+},
+de: {
+  tagline: "Kostenloser VPN-Client — WireGuard & VLESS/VMess/Trojan. Server in über 25 Ländern.",
+  download: "⬇ APK herunterladen",
+  installTitle: "Installation auf Android 12–16",
+  steps: [
+    "Tippen Sie oben auf <b>APK herunterladen</b> und warten Sie, bis der Download abgeschlossen ist.",
+    "Öffnen Sie die heruntergeladene Datei über die Benachrichtigung oder die App <b>Dateien</b> / <b>Downloads</b>.",
+    "Android fragt: „Zu Ihrer Sicherheit darf Ihr Telefon unbekannte Apps aus dieser Quelle nicht installieren“. Tippen Sie auf <b>Einstellungen</b>.",
+    "Aktivieren Sie <b>Aus dieser Quelle erlauben</b> (für Ihren Browser oder die Dateien-App).",
+    "Gehen Sie zurück und tippen Sie auf <b>Installieren</b>.",
+    "Öffnen Sie Jupiter VPN — es funktioniert sofort: Land wählen und verbinden. Beim ersten Verbindungsaufbau fragt Android nach VPN-Erlaubnis — tippen Sie auf <b>OK</b>.",
+    "Unter Android 13+ fragt die App nach Benachrichtigungsberechtigung — tippen Sie auf <b>Zulassen</b>, um den Verbindungsstatus zu sehen."
+  ],
+  warn: "⚠ Wenn Google Play Protect eine Warnung zu einer unbekannten App zeigt: <b>Weitere Details</b> → <b>Trotzdem installieren</b>. Das ist bei APKs außerhalb des Play Stores normal.",
+  troubleTitle: "Wenn die Installation blockiert wird",
+  trouble: "1. Stellen Sie sicher, dass der Download vollständig ist (52 MB). 2. Bei „App nicht installiert“ zuerst eine ältere Version von „WG Client“ / „Jupiter VPN“ deinstallieren. 3. Prüfen Sie den freien Speicher (~200 MB nötig). 4. Manche Browser blockieren APK-Downloads: Chrome verwenden. 5. Wenn ein Firmenprofil blockiert, über die Dateien-App installieren, nachdem „Aus dieser Quelle erlauben“ aktiviert wurde."
+},
+tr: {
+  tagline: "Ücretsiz VPN istemcisi — WireGuard ve VLESS/VMess/Trojan. 25+ ülkede sunucular.",
+  download: "⬇ APK indir",
+  installTitle: "Android 12–16 kurulumu",
+  steps: [
+    "Yukarıdaki <b>APK indir</b> düğmesine dokunun ve indirme bitene kadar bekleyin.",
+    "İndirilen dosyayı bildirimden veya <b>Dosyalar</b> / <b>İndirilenler</b> uygulamasından açın.",
+    "Android şunu soracak: “Güvenliğiniz için telefonunuz bu kaynaktan bilinmeyen uygulamaları yükleyemez”. <b>Ayarlar</b>'a dokunun.",
+    "<b>Bu kaynağa izin ver</b> seçeneğini açın (tarayıcınız veya Dosyalar uygulaması için).",
+    "Geri dönün ve <b>Yükle</b>'ye dokunun.",
+    "Jupiter VPN'i açın — hemen çalışır: bir ülke seçin ve bağlan'a dokunun. İlk bağlantıda Android VPN izni isteyecek — <b>Tamam</b>'a dokunun.",
+    "Android 13+ uygulama bildirim izni isteyebilir — bağlantı durumunu görmek için <b>İzin ver</b>'e dokunun."
+  ],
+  warn: "⚠ Google Play Protect bilinmeyen bir uygulama hakkında uyarı gösterirse: <b>Diğer ayrıntılar</b> → <b>Yine de yükle</b>. Play Store dışı APK'lar için bu normaldir.",
+  troubleTitle: "Kurulum engellenirse",
+  trouble: "1. İndirmenin tamamlandığından emin olun (52 MB). 2. “Uygulama yüklenmedi” hatası alırsanız önce eski “WG Client” / “Jupiter VPN” sürümünü kaldırın. 3. Boş depolama alanını kontrol edin (~200 MB gerekli). 4. Bazı tarayıcılar APK indirmeyi engeller: Chrome kullanın. 5. Kurumsal profil engelliyse, “Bu kaynağa izin ver” açtıktan sonra Dosyalar uygulamasından yükleyin."
+},
+ar: {
+  tagline: "عميل VPN مجاني — WireGuard و VLESS/VMess/Trojan. خوادم في أكثر من 25 دولة.",
+  download: "⬇ تحميل APK",
+  installTitle: "التثبيت على أندرويد 12–16",
+  steps: [
+    "اضغط <b>تحميل APK</b> أعلاه وانتظر حتى يكتمل التنزيل.",
+    "افتح الملف الذي تم تنزيله من الإشعار أو من تطبيق <b>الملفات</b> / <b>التنزيلات</b>.",
+    "سيسأل أندرويد: «لأمنك، هاتفك لا يسمح بتثبيت تطبيقات مجهولة من هذا المصدر». اضغط <b>الإعدادات</b>.",
+    "فعّل <b>السماح من هذا المصدر</b> (لمتصفحك أو تطبيق الملفات).",
+    "عُد للخلف واضغط <b>تثبيت</b>.",
+    "افتح Jupiter VPN — يعمل فورًا: اختر دولة واضغط اتصال. عند أول اتصال سيطلب أندرويد إذن VPN — اضغط <b>موافق</b>.",
+    "في أندرويد 13+ قد يطلب التطبيق إذن الإشعارات — اضغط <b>سماح</b> لرؤية حالة الاتصال."
+  ],
+  warn: "⚠ إذا أظهر Google Play Protect تحذيرًا حول تطبيق مجهول، اضغط <b>تفاصيل أكثر</b> ← <b>التثبيت على أي حال</b>. هذا طبيعي لملفات APK خارج متجر Play.",
+  troubleTitle: "إذا تم منع التثبيت",
+  trouble: "1. تأكد من اكتمال التنزيل (52 ميجابايت). 2. إذا ظهرت رسالة «لم يتم تثبيت التطبيق»، فاحذف أولًا أي إصدار قديم من «WG Client» / «Jupiter VPN». 3. تحقق من المساحة الحرة (~200 ميجابايت). 4. بعض المتصفحات تمنع تنزيل APK: استخدم Chrome. 5. إذا منع ملف تعريف الشركة التثبيت، ثبّت عبر تطبيق الملفات بعد تفعيل «السماح من هذا المصدر»."
+},
+zh: {
+  tagline: "免费 VPN 客户端 — WireGuard 与 VLESS/VMess/Trojan。25+ 国家服务器。",
+  download: "⬇ 下载 APK",
+  installTitle: "在 Android 12–16 上安装",
+  steps: [
+    "点击上方 <b>下载 APK</b>，等待下载完成。",
+    "从通知栏或 <b>文件</b> / <b>下载</b> 应用打开下载的文件。",
+    "Android 会提示：“为了您的安全，手机不允许从此来源安装未知应用”。点击 <b>设置</b>。",
+    "开启 <b>允许从此来源安装</b>（针对您的浏览器或文件应用）。",
+    "返回并点击 <b>安装</b>。",
+    "打开 Jupiter VPN — 立即可用：选择国家并点击连接。首次连接时 Android 会询问 VPN 权限 — 点击 <b>确定</b>。",
+    "Android 13+ 应用会请求通知权限 — 点击 <b>允许</b> 以查看连接状态。"
+  ],
+  warn: "⚠ 如果 Google Play 保护机制显示未知应用警告，点击 <b>更多详情</b> → <b>仍要安装</b>。对于 Play 商店以外的 APK 这是正常的。",
+  troubleTitle: "如果安装被阻止",
+  trouble: "1. 确保下载已完全完成 (52 MB)。2. 如果显示“未安装应用”，请先卸载旧版“WG Client”/“Jupiter VPN”。3. 检查剩余存储空间（需要约 200 MB）。4. 某些浏览器会阻止 APK 下载：请使用 Chrome。5. 如果公司配置文件阻止安装，请在开启“允许从此来源安装”后通过文件应用安装。"
+},
+hi: {
+  tagline: "मुफ़्त VPN क्लाइंट — WireGuard और VLESS/VMess/Trojan. 25+ देशों में सर्वर।",
+  download: "⬇ APK डाउनलोड करें",
+  installTitle: "Android 12–16 पर इंस्टॉल करें",
+  steps: [
+    "ऊपर <b>APK डाउनलोड करें</b> दबाएँ और डाउनलोड पूरा होने तक प्रतीक्षा करें।",
+    "नोटिफिकेशन से या <b>Files</b> / <b>Downloads</b> ऐप से डाउनलोड की गई फ़ाइल खोलें।",
+    "Android पूछेगा: “आपकी सुरक्षा के लिए, फ़ोन इस स्रोत से अज्ञात ऐप इंस्टॉल करने की अनुमति नहीं देता”। <b>सेटिंग्स</b> दबाएँ।",
+    "<b>इस स्रोत से अनुमति दें</b> चालू करें (अपने ब्राउज़र या Files ऐप के लिए)।",
+    "वापस जाएँ और <b>इंस्टॉल</b> दबाएँ।",
+    "Jupiter VPN खोलें — यह तुरंत काम करता है: देश चुनें और कनेक्ट दबाएँ। पहली बार कनेक्ट करने पर Android VPN अनुमति माँगेगा — <b>OK</b> दबाएँ।",
+    "Android 13+ पर ऐप नोटिफिकेशन अनुमति माँगेगा — कनेक्शन स्थिति देखने के लिए <b>अनुमति दें</b> दबाएँ।"
+  ],
+  warn: "⚠ यदि Google Play Protect अज्ञात ऐप के बारे में चेतावनी दिखाए, तो <b>अधिक विवरण</b> → <b>फिर भी इंस्टॉल करें</b> दबाएँ। Play Store के बाहर APK के लिए यह सामान्य है।",
+  troubleTitle: "यदि इंस्टॉलेशन ब्लॉक हो",
+  trouble: "1. सुनिश्चित करें कि डाउनलोड पूरा हुआ (52 MB)। 2. यदि “ऐप इंस्टॉल नहीं हुआ” दिखे, तो पहले पुराना “WG Client” / “Jupiter VPN” अनइंस्टॉल करें। 3. खाली स्टोरेज जाँचें (~200 MB चाहिए)। 4. कुछ ब्राउज़र APK डाउनलोड रोकते हैं: Chrome उपयोग करें। 5. यदि कंपनी प्रोफ़ाइल रोकती है, तो “इस स्रोत से अनुमति दें” चालू करके Files ऐप से इंस्टॉल करें।"
+},
+id: {
+  tagline: "Klien VPN gratis — WireGuard & VLESS/VMess/Trojan. Server di 25+ negara.",
+  download: "⬇ Unduh APK",
+  installTitle: "Instalasi di Android 12–16",
+  steps: [
+    "Ketuk <b>Unduh APK</b> di atas dan tunggu unduhan selesai.",
+    "Buka file yang diunduh dari notifikasi atau aplikasi <b>File</b> / <b>Download</b>.",
+    "Android akan bertanya: “Untuk keamanan Anda, ponsel tidak diizinkan menginstal aplikasi tak dikenal dari sumber ini”. Ketuk <b>Setelan</b>.",
+    "Aktifkan <b>Izinkan dari sumber ini</b> (untuk browser atau aplikasi File).",
+    "Kembali dan ketuk <b>Instal</b>.",
+    "Buka Jupiter VPN — langsung berfungsi: pilih negara dan ketuk hubungkan. Saat koneksi pertama Android akan meminta izin VPN — ketuk <b>OK</b>.",
+    "Di Android 13+ aplikasi akan meminta izin notifikasi — ketuk <b>Izinkan</b> untuk melihat status koneksi."
+  ],
+  warn: "⚠ Jika Google Play Protect menampilkan peringatan tentang aplikasi tak dikenal, ketuk <b>Detail lainnya</b> → <b>Tetap instal</b>. Ini normal untuk APK di luar Play Store.",
+  troubleTitle: "Jika instalasi diblokir",
+  trouble: "1. Pastikan unduhan selesai sepenuhnya (52 MB). 2. Jika muncul “Aplikasi tidak terinstal”, hapus dulu versi lama “WG Client” / “Jupiter VPN”. 3. Periksa penyimpanan kosong (perlu ~200 MB). 4. Beberapa browser memblokir unduhan APK: gunakan Chrome. 5. Jika profil perusahaan memblokir, instal melalui aplikasi File setelah mengaktifkan “Izinkan dari sumber ini”."
+},
+vi: {
+  tagline: "Ứng dụng VPN miễn phí — WireGuard & VLESS/VMess/Trojan. Máy chủ tại hơn 25 quốc gia.",
+  download: "⬇ Tải APK",
+  installTitle: "Cài đặt trên Android 12–16",
+  steps: [
+    "Nhấn <b>Tải APK</b> ở trên và đợi tải xong.",
+    "Mở tệp đã tải từ thông báo hoặc ứng dụng <b>Tệp</b> / <b>Tải xuống</b>.",
+    "Android sẽ hỏi: “Vì sự an toàn của bạn, điện thoại không cho phép cài đặt ứng dụng không xác định từ nguồn này”. Nhấn <b>Cài đặt</b> (Settings).",
+    "Bật <b>Cho phép từ nguồn này</b> (cho trình duyệt hoặc ứng dụng Tệp).",
+    "Quay lại và nhấn <b>Cài đặt</b> (Install).",
+    "Mở Jupiter VPN — hoạt động ngay: chọn quốc gia và nhấn kết nối. Lần kết nối đầu Android sẽ xin quyền VPN — nhấn <b>OK</b>.",
+    "Trên Android 13+ ứng dụng sẽ xin quyền thông báo — nhấn <b>Cho phép</b> để xem trạng thái kết nối."
+  ],
+  warn: "⚠ Nếu Google Play Protect cảnh báo về ứng dụng không xác định, nhấn <b>Chi tiết hơn</b> → <b>Vẫn cài đặt</b>. Điều này bình thường với APK ngoài Play Store.",
+  troubleTitle: "Nếu bị chặn cài đặt",
+  trouble: "1. Đảm bảo tải xuống hoàn tất (52 MB). 2. Nếu hiện “Ứng dụng chưa được cài đặt”, hãy gỡ bản cũ “WG Client” / “Jupiter VPN” trước. 3. Kiểm tra dung lượng trống (cần ~200 MB). 4. Một số trình duyệt chặn tải APK: dùng Chrome. 5. Nếu hồ sơ công ty chặn, cài qua ứng dụng Tệp sau khi bật “Cho phép từ nguồn này”."
+},
+fa: {
+  tagline: "کلاینت VPN رایگان — WireGuard و VLESS/VMess/Trojan. سرور در بیش از ۲۵ کشور.",
+  download: "⬇ دانلود APK",
+  installTitle: "نصب روی اندروید ۱۲–۱۶",
+  steps: [
+    "روی <b>دانلود APK</b> در بالا بزنید و صبر کنید تا دانلود کامل شود.",
+    "فایل دانلودشده را از اعلان یا برنامه <b>Files</b> / <b>Downloads</b> باز کنید.",
+    "اندروید می‌پرسد: «برای امنیت شما، تلفن اجازه نصب برنامه‌های ناشناس از این منبع را ندارد». روی <b>تنظیمات</b> بزنید.",
+    "<b>اجازه از این منبع</b> را روشن کنید (برای مرورگر یا برنامه Files).",
+    "برگردید و روی <b>نصب</b> بزنید.",
+    "Jupiter VPN را باز کنید — فوراً کار می‌کند: کشور را انتخاب و دکمه اتصال را بزنید. در اولین اتصال اندروید اجازه VPN می‌خواهد — <b>OK</b> را بزنید.",
+    "در اندروید ۱۳+ برنامه اجازه نوتیفیکیشن می‌خواهد — برای دیدن وضعیت اتصال <b>اجازه دادن</b> را بزنید."
+  ],
+  warn: "⚠ اگر Google Play Protect درباره برنامه ناشناس هشدار داد، <b>جزئیات بیشتر</b> ← <b>با این حال نصب کن</b> را بزنید. برای APKهای خارج از Play عادی است.",
+  troubleTitle: "اگر نصب مسدود شد",
+  trouble: "۱. مطمئن شوید دانلود کامل شده (۵۲ مگابایت). ۲. اگر «برنامه نصب نشد» ظاهر شد، ابتدا نسخه قدیمی «WG Client» / «Jupiter VPN» را حذف کنید. ۳. فضای خالی را بررسی کنید (~۲۰۰ مگابایت). ۴. برخی مرورگرها دانلود APK را مسدود می‌کنند: از Chrome استفاده کنید. ۵. اگر پروفایل شرکتی جلوی نصب را گرفت، پس از فعال‌کردن «اجازه از این منبع» از برنامه Files نصب کنید."
+},
+};
+
+const LANGS = Object.keys(I18N);
+const names = {en:"English",ru:"Русский",es:"Español",pt:"Português",fr:"Français",de:"Deutsch",tr:"Türkçe",ar:"العربية",zh:"中文",hi:"हिन्दी",id:"Indonesia",vi:"Tiếng Việt",fa:"فارسی"};
+function pick(l) {
+  const d = I18N[l];
+  document.querySelector('[data-i18n="tagline"]').textContent = d.tagline;
+  document.querySelector('[data-i18n="download"]').textContent = d.download;
+  document.querySelector('[data-i18n="installTitle"]').textContent = d.installTitle;
+  const ol = document.querySelector('[data-i18n="steps"]');
+  ol.innerHTML = d.steps.map(s => "<li>" + s + "</li>").join("");
+  document.querySelector('[data-i18n="warn"]').innerHTML = d.warn;
+  document.querySelector('[data-i18n="troubleTitle"]').textContent = d.troubleTitle;
+  document.querySelector('[data-i18n="trouble"]').innerHTML = d.trouble;
+  document.documentElement.lang = l;
+  document.documentElement.dir = (l === "ar" || l === "fa") ? "rtl" : "ltr";
+  document.querySelectorAll(".lang button").forEach(b => b.classList.toggle("on", b.dataset.l === l));
+  try { localStorage.setItem("jv_lang", l); } catch (e) {}
+}
+const bar = document.getElementById("langs");
+LANGS.forEach(l => {
+  const b = document.createElement("button");
+  b.textContent = names[l];
+  b.dataset.l = l;
+  b.onclick = () => pick(l);
+  bar.appendChild(b);
+});
+let saved = "en";
+try { saved = localStorage.getItem("jv_lang") || (navigator.language || "en").slice(0,2); } catch (e) {
+  saved = (navigator.language || "en").slice(0,2);
+}
+pick(I18N[saved] ? saved : "en");
+</script>
+</body>
+</html>
